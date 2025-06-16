@@ -1,33 +1,74 @@
-# Hierarchical Variational Memory for Few-shot Learning Across Domains
+# Hierarchical Variational Memory (HVM) Implementation
 
-Official implementation of our ICLR 2022 paper:  
-**Hierarchical Variational Memory for Few-shot Learning Across Domains**  
-📄 [Paper (arXiv)](https://arxiv.org/pdf/2112.08181)
+Implementation based on the paper "Hierarchical Variational Memory for Few-shot Learning Across Domains" (ICLR 2022).
 
----
 
-## 📁 Project Structure
+
+## File Structure
 
 ```
-HVM/
-├── data/         # Preprocessed datasets
-├── models/       # Model architecture files
-├── memory/       # Hierarchical memory modules
-├── scripts/      # Training and evaluation scripts
-├── configs/      # Experiment configurations
-├── utils/        # Helper functions
-└── README.md     # Project description
+├── features.py                     # Feature extractors (including hierarchical versions)
+├── hierarchical_memory.py          # Core HVM implementation
+├── run_hvm_classifier.py          # HVM classifier main program
+├── test_hvm.py                     # HVM functionality test script
+├── inference.py                    # Inference networks
+├── utilities.py                    # Utility functions
+├── data.py                         # Data loading
+└── README_HVM.md                   # This document
 ```
----
 
-## 📖 Citation
 
-If you use this code in your research, please cite:
+
+## Usage
+
+### 1. Basic Testing
+
+First run the test script to verify the implementation:
+
+```bash
+python test_hvm.py
+```
+
+### 2. Training HVM Model
+
+Use HVM for few-shot classification training:
+
+```bash
+python run_hvm_classifier.py \
+    --dataset miniImageNet \
+    --mode train_test \
+    --shot 1 \
+    --way 5 \
+    --num_levels 4 \
+    --kl_weight 0.1 \
+    --iterations 1000 \
+    --learning_rate 0.0001
+```
+
+### 3. Parameter Description
+
+#### HVM-specific Parameters:
+
+- `--num_levels`: Number of hierarchical levels (default: 4)
+- `--kl_weight`: Weight for KL divergence loss (default: 0.1)
+- `--hierarchical`: Whether to use hierarchical memory (default: True)
+
+#### General Parameters:
+
+- `--dataset`: Dataset selection (Omniglot, miniImageNet, tieredImageNet, cifarfs)
+- `--shot`: Number of support samples per class
+- `--way`: Number of classes
+- `--memory_samples`: Number of memory samples (default: 50)
+- `--top_k`: Top-k value for attention mechanism (default: 10)
+
+
+## Reference
 
 ```bibtex
 @inproceedings{du2022hierarchical,
   title={Hierarchical Variational Memory for Few-shot Learning Across Domains},
-  author={Du, Yingjun and Zhen, Xiantong and Shao, Ling and Snoek, Cees G M},
-  booktitle={ICLR},
+  author={Du, Yingjun and Zhen, Xiantong and Shao, Ling and Snoek, Cees GM},
+  booktitle={International Conference on Learning Representations},
   year={2022}
 }
+``` 
