@@ -8,14 +8,16 @@ Official implementation of our ICLR 2022 paper:
 
 ## 📁 Project Structure
 
+```
 HVM/
-├── data/                  # Preprocessed datasets
-├── models/                # Model architecture files
-├── memory/                # Hierarchical memory modules
-├── scripts/               # Training and evaluation scripts
-├── configs/               # Experiment configs
-├── utils/                 # Helper functions
-└── README.md              # You are here
+├── data/         # Preprocessed datasets
+├── models/       # Model architecture files
+├── memory/       # Hierarchical memory modules
+├── scripts/      # Training and evaluation scripts
+├── configs/      # Experiment configurations
+├── utils/        # Helper functions
+└── README.md     # Project description
+```
 ---
 
 ## 📖 Citation
