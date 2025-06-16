@@ -1,7 +1,12 @@
-Official implementation of our ICLR 2022 paper:
-Hierarchical Variational Memory for Few-shot Learning Across Domains https://arxiv.org/pdf/2112.08181
+# Hierarchical Variational Memory for Few-shot Learning Across Domains
 
-Project Structure
+Official implementation of our ICLR 2022 paper:  
+**Hierarchical Variational Memory for Few-shot Learning Across Domains**  
+📄 [Paper (arXiv)](https://arxiv.org/pdf/2112.08181)
+
+---
+
+## 📁 Project Structure
 
 HVM/
 ├── data/                  # Preprocessed datasets
@@ -11,8 +16,13 @@ HVM/
 ├── configs/               # Experiment configs
 ├── utils/                 # Helper functions
 └── README.md              # You are here
+---
 
+## 📖 Citation
 
+If you use this code in your research, please cite:
+
+```bibtex
 @inproceedings{du2022hierarchical,
   title={Hierarchical Variational Memory for Few-shot Learning Across Domains},
   author={Du, Yingjun and Zhen, Xiantong and Shao, Ling and Snoek, Cees G M},
